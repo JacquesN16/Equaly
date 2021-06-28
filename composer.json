@@ -93,7 +93,7 @@
             "php bin/console doctrine:fixtures:load --no-interaction"
         ],
         "post-install-cmd": [
-            "@auto-scripts",
+            "@auto-scripts"
             
         ],
         "post-update-cmd": [
