@@ -1,0 +1,50 @@
+{% extends 'home/squelette.html.twig' %}
+
+{% block main%}
+
+
+{% if items | length > 0 %}
+<div class="container">
+    <h1> Mes coups de coeur &#x2665;</h1>
+
+    {% for item in items %}
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+            
+                <h5>{{ item.job.name }}</h5>
+                {% if app.user and item.job.estPostuleParCandidat(app.user)  %}
+                
+                {% else %}
+                
+                 <button type="button" class="btn_send  btn-primary"> <a href="{{path('job_postuler',  {'id':item.job.id} )}}">Postuler</a>  </button>
+                {% endif %}
+            </div>
+
+           
+                <a class="delete" href="{{path('remove_favoris', {'id':item.job.id})}}" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Supprimer</a>
+           
+            <div class="modal-body">
+                <p>{{ item.job.description }}</p>
+                <small>{{ item.job.id }}</small>
+                 
+            </div>
+           
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+  </div>  
+
+    {% else %}
+    <p class="favoris"> 
+    <img src="https://img.icons8.com/dotty/80/000000/sad-ghost--v1.png"/>
+    Il n'y a rien pour le moment</p>
+    {# <p> <a href="{{'path('job_postuler',{'id': job.id})'}}">Allez voir plus d'offres</a> </p> #}
+
+    {% endif %}
+
+
+
+{% endblock %}

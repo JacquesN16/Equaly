@@ -1,0 +1,28 @@
+{% extends 'home/squelette.html.twig' %}
+
+{% block main%}
+{% if posts | length > 0 %}
+<div class="container">
+    <h1> Liste des candidatures </h1>
+    {% for post in posts %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><a href="{{ path('recruteur_candidature',{'id' : post.candidat.id})}}" class="card-link"><span>{{ post.candidat.firstName }}</span> <span>{{ post.candidat.lastName }}</span></a></h5>
+            <p class="card-text">{{ post.candidat.descriptionCandidat}}</p>
+            <small class="card-text">{{ post.candidat.experience }}</small>
+                    
+        </div>
+    </div>
+
+        {% endfor %}
+  </div>  
+
+    {% else %}
+    <p> Il n'y a aucun candidat pour le moment</p>
+    
+
+    {% endif %}
+
+
+
+{% endblock %}

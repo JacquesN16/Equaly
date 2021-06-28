@@ -1,0 +1,29 @@
+{% extends 'home/squelette.html.twig' %}
+
+{% block main %}
+
+	<div class="before">
+		<div class="box">
+        <img src="https://img.icons8.com/ios/50/000000/rocket--v2.png"/>
+        
+			<h4>
+				AVANT DE COMMENCER
+			</h4>
+			
+            </div>
+		<h2>Je suis</h2>
+	</div>
+	<div class="register_container">
+		<div class="candidat slide-top">
+			<a href="{{ path('app_register') }}">CANDIDAT</a>
+		</div>
+
+
+		<div class="recruteur slide-top">
+			<a href="{{path('app_register_recruteur')}}">RECRUTEUR</a>
+		</div>
+
+	</div>
+
+
+{% endblock %}

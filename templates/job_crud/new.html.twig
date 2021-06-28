@@ -1,0 +1,15 @@
+{% extends 'home/squelette.html.twig' %}
+
+{% block title %}Creation d'offres{% endblock %}
+
+{% block main %}
+
+<section class="create_new_job">
+
+    <h1>Création offre</h1>
+
+    {{ include('job_crud/_form.html.twig') }}
+
+    <a href="{{ path('job_crud_index') }}"> <i class="fas fa-arrow-left"></i> Retour </a>
+    </section>
+{% endblock %}
