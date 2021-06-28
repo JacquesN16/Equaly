@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=CandidatRepository::class)
- * @ORM\Table(name="candidat")
+ * @ORM\Table(name="b9mr8v7r2qmyksi7.candidat")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class Candidat implements UserInterface, \Serializable
