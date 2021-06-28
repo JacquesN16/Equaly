@@ -94,7 +94,7 @@
         ],
         "post-install-cmd": [
             "@auto-scripts",
-            "@database-setup"
+            
         ],
         "post-update-cmd": [
             "@auto-scripts"
